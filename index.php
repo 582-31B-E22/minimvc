@@ -35,7 +35,7 @@ class Routeur
   }
   
   public function invoquerRoute() {
-    $module = "accueil"; 
+    $module = MODULE_DEFAUT; 
     $action = "index";
     $params = "";
     $routeTableau = explode('/', $this->route);
@@ -61,7 +61,7 @@ class Routeur
       $controleur->$action($params);
     }
     else {
-      $controleur = new Controleur('', 'accueil', 'index');
+      $controleur = new Controleur('', MODULE_DEFAUT, 'index');
     }
   }
 }
